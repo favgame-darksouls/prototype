@@ -23,7 +23,6 @@ namespace prototype
             
         }
 
-        //MorganGet System Information using enviroment [source code]. https://morgantechspace.com/2015/08/get-system-information-in-c-sharp.html
         
         private void dvd_Click(object sender, EventArgs e)
         {
