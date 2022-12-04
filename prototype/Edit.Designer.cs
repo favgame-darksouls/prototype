@@ -52,6 +52,8 @@ namespace prototype
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -158,6 +160,7 @@ namespace prototype
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Location = new System.Drawing.Point(487, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(304, 221);
@@ -292,6 +295,15 @@ namespace prototype
             this.textBox5.TabIndex = 88;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "label12";
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +334,8 @@ namespace prototype
             this.Controls.Add(this.label1);
             this.Name = "Edit";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +366,6 @@ namespace prototype
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label12;
     }
 }
