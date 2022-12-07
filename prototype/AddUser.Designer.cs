@@ -63,6 +63,7 @@ namespace prototype
             this.textBox6.PasswordChar = '*';
             this.textBox6.Size = new System.Drawing.Size(202, 24);
             this.textBox6.TabIndex = 85;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label8
             // 
@@ -81,6 +82,7 @@ namespace prototype
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(202, 24);
             this.textBox3.TabIndex = 83;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label7
             // 
@@ -99,6 +101,7 @@ namespace prototype
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 24);
             this.textBox2.TabIndex = 81;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
@@ -117,6 +120,7 @@ namespace prototype
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(202, 24);
             this.textBox1.TabIndex = 79;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -141,6 +145,7 @@ namespace prototype
             this.button2.TabIndex = 88;
             this.button2.Text = "Add New User";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -159,6 +164,7 @@ namespace prototype
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(202, 24);
             this.textBox4.TabIndex = 89;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label2
             // 
@@ -206,6 +212,7 @@ namespace prototype
             this.Controls.Add(this.textBox1);
             this.Name = "AddUser";
             this.Text = "AddUser";
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

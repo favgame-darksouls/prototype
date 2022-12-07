@@ -119,6 +119,7 @@ namespace prototype
             this.button4.TabIndex = 29;
             this.button4.Text = "Look up Software Information";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button7
             // 
@@ -131,6 +132,7 @@ namespace prototype
             this.button7.Text = "Add New User";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.UseWaitCursor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Home
             // 

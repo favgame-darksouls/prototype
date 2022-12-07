@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using System.Data.SqlClient;
 
 namespace prototype
 {
     public partial class login : Form
     {
 
-
+        string username;
         string password;
         public login()
         {
@@ -38,16 +39,34 @@ namespace prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //label1.Text = "Hi"; label1.Refresh();
+           
             try { 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
-            //MessageBox.Show(passwordHash);
+            SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
+            SqlCommand cmd = new SqlCommand("select ID from USERS where ID = @EMAIL AND PASS_HASH = @PASSWORD_HASH", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@EMAIL", username);
+                cmd.Parameters.AddWithValue("@PASSWORD_HASH", passwordHash);
+
+                int i = cmd.ExecuteNonQuery();
+
+
+                if (i != 0)
+                {
+                    Home instance = new Home();
+                    instance.Show();
+                    this.Close();
+                }
+                //MessageBox.Show(passwordHash);
             }
-            catch { MessageBox.Show("Please enter a password"); }
+            catch { MessageBox.Show("Please Fill in all fields"); }
+
+
+
             
+
+        
             
-            Home instance = new Home();
-            instance.Show();
 
         }
 
@@ -60,6 +79,15 @@ namespace prototype
 
         }
 
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.username = textBox1.Text.ToString();
+        }
     }
 
 }
