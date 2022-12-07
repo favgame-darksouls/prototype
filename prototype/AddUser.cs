@@ -13,6 +13,8 @@ namespace prototype
     public partial class AddUser : Form
     {
         string ID, Fname, Lname, password, position;
+        SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
+
         public AddUser()
         {
             InitializeComponent();
@@ -39,6 +41,36 @@ namespace prototype
             this.Fname = textBox1.Text.ToString();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+                SqlCommand cmd = new SqlCommand("DELETE FROM USERS WHERE ID = @ID AND PASS_HASH = @password;", con);
+
+
+                cmd.Parameters.AddWithValue("@ID", ID);
+                cmd.Parameters.AddWithValue("@password", passwordHash);
+                
+
+
+
+                int i = cmd.ExecuteNonQuery();
+                //string ys = i.ToString();
+                //MessageBox.Show(ys);
+                if (i != 0)
+                {
+
+                    MessageBox.Show("User " + ID + " deleted");
+                }
+                else
+                {
+                    MessageBox.Show("User doesn't exhists");
+                };
+            }
+            catch { MessageBox.Show("Please fill in all fields!"); }
+        }
+
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             this.password = textBox6.Text.ToString();
@@ -60,7 +92,6 @@ namespace prototype
             try
             {
                 string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
-                SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
                 SqlCommand cmd = new SqlCommand("select ID from USERS where ID = @ID", con);
                 //con.Open();
 

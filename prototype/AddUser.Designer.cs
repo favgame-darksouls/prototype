@@ -133,6 +133,7 @@ namespace prototype
             this.button1.TabIndex = 87;
             this.button1.Text = "Delete User";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -187,8 +188,8 @@ namespace prototype
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(282, 114);
             this.richTextBox1.TabIndex = 92;
-            this.richTextBox1.Text = " All fields that are NOT marked  optional are mandatory. Please fill in these fie" +
-    "lds then click the corrsponding button.";
+            this.richTextBox1.Text = " When adding new users ALL fields are mandatory. \n\nPlease enter user\'s ID and pas" +
+    "sword in order to remove user. ";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // AddUser

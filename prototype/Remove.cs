@@ -13,7 +13,10 @@ namespace prototype
 {
     public partial class Remove : Form
     {
-        string SYSTEM_NAME, MODEL, OBJECT_TYPE, IP_ADDRESS, OWNER_F_NAME, OWNER_L_NAME;
+        string Fname, Lname, MODEL, system_name, IP, ID;
+        string[] array2 = new string[5];
+        SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -22,32 +25,61 @@ namespace prototype
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            this.SYSTEM_NAME = this.textBox6.Text.ToString();
+            this.array2[0] = this.textBox6.Text.ToString();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            this.array2[1] = this.textBox6.Text.ToString();
+        }
+
+        private void Remove_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            this.MODEL = this.textBox3.Text.ToString();
+            this.array2[2] = this.textBox3.Text.ToString();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            this.OWNER_L_NAME = this.textBox2.Text.ToString();
+            this.array2[3] = this.textBox2.Text.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
-            //SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTS ( PRODUCT_NAME, PRODUCT_INFO, CATEGORY, TOTAL_STOCK, PRICE, DISCOUNT, AVAILABLE_STOCK, DISCOUNT_START, DISCOUNT_END) values ( @PRODUCT_NAME, @PRODUCT_INFO, @CATEGORY, @TOTAL_STOCK, @PRICE, @DISCOUNT, @AVAILABLE_STOCK, @DISCOUNT_START, @DISCOUNT_END)", con);
-            //con.Open();
-            //cmd.Parameters.AddWithValue("@PRODUCT_NAME", PRODUCT_NAME);
-            //cmd.Parameters.AddWithValue("@PRODUCT_INFO", PRODUCT_INFO);
+            foreach( string i in array2) { 
+                if (i != "") {
+                    ID = ID + "and" + i;
+                }
+            }
+            try { 
+            SqlCommand cmd = new SqlCommand("DELETE FROM USERS WHERE IP = @IP" + ID, con);
 
 
-            //int i = cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@strng", ID);
+            cmd.Parameters.AddWithValue("@system", system_name);
 
-            //con.Close();
+
+
+
+                int i = cmd.ExecuteNonQuery();
+            //string ys = i.ToString();
+            //MessageBox.Show(ys);
+            if (i != 0)
+            {
+
+                MessageBox.Show("User " + ID + " deleted");
+            }
+            else
+            {
+                MessageBox.Show("User doesn't exhists");
+            };
         }
+            catch { MessageBox.Show("Please fill in all fields!"); }
+}
 
         public Remove()
         {
@@ -56,7 +88,7 @@ namespace prototype
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.OWNER_F_NAME = this.textBox1.Text.ToString();
+            this.array2[4] = this.textBox1.Text.ToString();
         }
     }
 }

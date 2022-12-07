@@ -40,8 +40,8 @@ namespace prototype
         private void button1_Click(object sender, EventArgs e)
         {
            
-            try { 
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+            try {
+                string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
             SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
             SqlCommand cmd = new SqlCommand("select ID from USERS where ID = @EMAIL AND PASS_HASH = @PASSWORD_HASH", con);
                 con.Open();
@@ -49,15 +49,16 @@ namespace prototype
                 cmd.Parameters.AddWithValue("@PASSWORD_HASH", passwordHash);
 
                 int i = cmd.ExecuteNonQuery();
-
+                
 
                 if (i != 0)
                 {
                     Home instance = new Home();
                     instance.Show();
-                    this.Close();
+                    //this.Close();
                 }
-                //MessageBox.Show(passwordHash);
+                //else { MessageBox.Show(ys); }
+                
             }
             catch { MessageBox.Show("Please Fill in all fields"); }
 

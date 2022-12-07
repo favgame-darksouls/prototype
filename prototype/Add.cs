@@ -13,7 +13,8 @@ namespace prototype
 {
     public partial class Add : Form
     {
-        string SYSTEM_NAME, MODEL, OBJECT_TYPE, IP_ADDRESS, LOCATION, NOTE, OWNER_F_NAME, OWNER_L_NAME;
+        string Fname, Lname, MODEL, LOCATION, system_name, NOTE;
+        SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
 
         public Add()
         {
@@ -62,12 +63,12 @@ namespace prototype
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            this.LOCATION = this.textBox3.Text.ToString();
+            this.LOCATION = this.textBox4.Text.ToString();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            this.NOTE = this.textBox3.Text.ToString();
+            this.NOTE = this.textBox5.Text.ToString();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace prototype
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            this.LOCATION = this.textBox3.Text.ToString();
+            this.system_name = this.textBox6.Text.ToString();
 
         }
 
@@ -95,35 +96,47 @@ namespace prototype
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            this.OWNER_L_NAME = this.textBox3.Text.ToString();
+            this.Lname = this.textBox2.Text.ToString();
 
         }
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.OWNER_F_NAME = this.textBox3.Text.ToString();
+            this.Fname = this.textBox1.Text.ToString();
 
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
-            //SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTS ( PRODUCT_NAME, PRODUCT_INFO, CATEGORY, TOTAL_STOCK, PRICE, DISCOUNT, AVAILABLE_STOCK, DISCOUNT_START, DISCOUNT_END) values ( @PRODUCT_NAME, @PRODUCT_INFO, @CATEGORY, @TOTAL_STOCK, @PRICE, @DISCOUNT, @AVAILABLE_STOCK, @DISCOUNT_START, @DISCOUNT_END)", con);
-            //con.Open();
-            //cmd.Parameters.AddWithValue("@PRODUCT_NAME", PRODUCT_NAME);
-            //cmd.Parameters.AddWithValue("@PRODUCT_INFO", PRODUCT_INFO);
-            
+            try
+            {
+                
+          
 
-            //int i = cmd.ExecuteNonQuery();
+                    //SYSTEM CONNECTION
 
-            //con.Close();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO hardware ( FIRST_NAME, LAST_NAME, MODEL, NOTE, SYSTEM_NAME, LOCATION) values ( @Fname, @Lname,@model, @note, @system, @location)", con);
+
+
+                    cmd.Parameters.AddWithValue("@model", MODEL);
+                    cmd.Parameters.AddWithValue("@Fname", Fname);
+                    cmd.Parameters.AddWithValue("@Lname", Lname);
+                    cmd.Parameters.AddWithValue("@note", NOTE);
+                    cmd.Parameters.AddWithValue("@system",system_name);
+                    cmd.Parameters.AddWithValue("@location", LOCATION);
+
+
+                    int i = cmd.ExecuteNonQuery();
+                
+            }
+            catch { MessageBox.Show("ERROR! Please ammend information."); }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            MessageBox.Show("ERROR! Please ammend information.");
         }
     }
 }
