@@ -29,6 +29,7 @@ namespace prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,21 +40,33 @@ namespace prototype
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sql1804215DataSet = new prototype.sql1804215DataSet();
+            this.sql1804215DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sql1804215DataSet1 = new prototype.sql1804215DataSet1();
+            this.hARDWAREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hARDWARETableAdapter = new prototype.sql1804215DataSet1TableAdapters.HARDWARETableAdapter();
+            this.oWNERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOCATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wORKERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sYSTEMNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iPADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hARDWAREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -158,51 +171,18 @@ namespace prototype
             this.label2.Text = "Please select the item\'s IP adress.";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(487, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(304, 221);
-            this.groupBox1.TabIndex = 75;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Current Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(255)))), ((int)(((byte)(170)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(594, 498);
+            this.button1.Location = new System.Drawing.Point(684, 498);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(205, 57);
             this.button1.TabIndex = 76;
             this.button1.Text = "Append Information";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 15);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Mouse Included";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 331);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 15);
-            this.label4.TabIndex = 80;
-            this.label4.Text = "Keyboard Inluded";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
@@ -224,30 +204,10 @@ namespace prototype
             this.textBox6.TabIndex = 77;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // comboBox2
-            // 
-            this.comboBox2.AllowDrop = true;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(136, 330);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 21);
-            this.comboBox2.TabIndex = 83;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AllowDrop = true;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(136, 373);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(202, 21);
-            this.comboBox3.TabIndex = 84;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(724, 307);
+            this.linkLabel1.Location = new System.Drawing.Point(822, 482);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 13);
             this.linkLabel1.TabIndex = 85;
@@ -258,7 +218,7 @@ namespace prototype
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 420);
+            this.label10.Location = new System.Drawing.Point(21, 332);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 15);
             this.label10.TabIndex = 87;
@@ -268,7 +228,7 @@ namespace prototype
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(136, 415);
+            this.textBox4.Location = new System.Drawing.Point(136, 327);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(202, 24);
             this.textBox4.TabIndex = 86;
@@ -278,7 +238,7 @@ namespace prototype
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(81, 466);
+            this.label11.Location = new System.Drawing.Point(81, 378);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 15);
             this.label11.TabIndex = 89;
@@ -288,40 +248,118 @@ namespace prototype
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(136, 461);
+            this.textBox5.Location = new System.Drawing.Point(136, 373);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(202, 75);
             this.textBox5.TabIndex = 88;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // label12
+            // dataGridView1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "label12";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oWNERNAMEDataGridViewTextBoxColumn,
+            this.lOCATIONDataGridViewTextBoxColumn,
+            this.wORKERIDDataGridViewTextBoxColumn,
+            this.mODELDataGridViewTextBoxColumn,
+            this.tYPEDataGridViewTextBoxColumn,
+            this.nOTEDataGridViewTextBoxColumn,
+            this.sYSTEMNAMEDataGridViewTextBoxColumn,
+            this.iPADDRESSDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.hARDWAREBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(359, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(526, 370);
+            this.dataGridView1.TabIndex = 90;
+            // 
+            // sql1804215DataSet
+            // 
+            this.sql1804215DataSet.DataSetName = "sql1804215DataSet";
+            this.sql1804215DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sql1804215DataSetBindingSource
+            // 
+            this.sql1804215DataSetBindingSource.DataSource = this.sql1804215DataSet;
+            this.sql1804215DataSetBindingSource.Position = 0;
+            // 
+            // sql1804215DataSet1
+            // 
+            this.sql1804215DataSet1.DataSetName = "sql1804215DataSet1";
+            this.sql1804215DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hARDWAREBindingSource
+            // 
+            this.hARDWAREBindingSource.DataMember = "HARDWARE";
+            this.hARDWAREBindingSource.DataSource = this.sql1804215DataSet1;
+            // 
+            // hARDWARETableAdapter
+            // 
+            this.hARDWARETableAdapter.ClearBeforeFill = true;
+            // 
+            // oWNERNAMEDataGridViewTextBoxColumn
+            // 
+            this.oWNERNAMEDataGridViewTextBoxColumn.DataPropertyName = "OWNER_NAME";
+            this.oWNERNAMEDataGridViewTextBoxColumn.HeaderText = "OWNER_NAME";
+            this.oWNERNAMEDataGridViewTextBoxColumn.Name = "oWNERNAMEDataGridViewTextBoxColumn";
+            // 
+            // lOCATIONDataGridViewTextBoxColumn
+            // 
+            this.lOCATIONDataGridViewTextBoxColumn.DataPropertyName = "LOCATION";
+            this.lOCATIONDataGridViewTextBoxColumn.HeaderText = "LOCATION";
+            this.lOCATIONDataGridViewTextBoxColumn.Name = "lOCATIONDataGridViewTextBoxColumn";
+            // 
+            // wORKERIDDataGridViewTextBoxColumn
+            // 
+            this.wORKERIDDataGridViewTextBoxColumn.DataPropertyName = "WORKER_ID";
+            this.wORKERIDDataGridViewTextBoxColumn.HeaderText = "WORKER_ID";
+            this.wORKERIDDataGridViewTextBoxColumn.Name = "wORKERIDDataGridViewTextBoxColumn";
+            // 
+            // mODELDataGridViewTextBoxColumn
+            // 
+            this.mODELDataGridViewTextBoxColumn.DataPropertyName = "MODEL";
+            this.mODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
+            this.mODELDataGridViewTextBoxColumn.Name = "mODELDataGridViewTextBoxColumn";
+            // 
+            // tYPEDataGridViewTextBoxColumn
+            // 
+            this.tYPEDataGridViewTextBoxColumn.DataPropertyName = "[TYPE]";
+            this.tYPEDataGridViewTextBoxColumn.HeaderText = "[TYPE]";
+            this.tYPEDataGridViewTextBoxColumn.Name = "tYPEDataGridViewTextBoxColumn";
+            // 
+            // nOTEDataGridViewTextBoxColumn
+            // 
+            this.nOTEDataGridViewTextBoxColumn.DataPropertyName = "NOTE";
+            this.nOTEDataGridViewTextBoxColumn.HeaderText = "NOTE";
+            this.nOTEDataGridViewTextBoxColumn.Name = "nOTEDataGridViewTextBoxColumn";
+            // 
+            // sYSTEMNAMEDataGridViewTextBoxColumn
+            // 
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.DataPropertyName = "SYSTEM_NAME";
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.HeaderText = "SYSTEM_NAME";
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.Name = "sYSTEMNAMEDataGridViewTextBoxColumn";
+            // 
+            // iPADDRESSDataGridViewTextBoxColumn
+            // 
+            this.iPADDRESSDataGridViewTextBoxColumn.DataPropertyName = "IP_ADDRESS";
+            this.iPADDRESSDataGridViewTextBoxColumn.HeaderText = "IP_ADDRESS";
+            this.iPADDRESSDataGridViewTextBoxColumn.Name = "iPADDRESSDataGridViewTextBoxColumn";
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 571);
+            this.ClientSize = new System.Drawing.Size(903, 571);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
@@ -334,8 +372,12 @@ namespace prototype
             this.Controls.Add(this.label1);
             this.Name = "Edit";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.Edit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hARDWAREBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,19 +395,27 @@ namespace prototype
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource sql1804215DataSetBindingSource;
+        private sql1804215DataSet sql1804215DataSet;
+        private sql1804215DataSet1 sql1804215DataSet1;
+        private System.Windows.Forms.BindingSource hARDWAREBindingSource;
+        private sql1804215DataSet1TableAdapters.HARDWARETableAdapter hARDWARETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oWNERNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lOCATIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wORKERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mODELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sYSTEMNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iPADDRESSDataGridViewTextBoxColumn;
     }
 }

@@ -13,7 +13,7 @@ namespace prototype
 {
     public partial class Add : Form
     {
-        string Fname, Lname, MODEL, LOCATION, system_name, NOTE;
+        string Fname, MODEL, LOCATION, system_name, NOTE;
         SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
 
         public Add()
@@ -96,7 +96,7 @@ namespace prototype
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            this.Lname = this.textBox2.Text.ToString();
+        
 
         }
 
@@ -112,24 +112,23 @@ namespace prototype
         {
             try
             {
-                
+                con.Open();
           
 
                     //SYSTEM CONNECTION
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO hardware ( FIRST_NAME, LAST_NAME, MODEL, NOTE, SYSTEM_NAME, LOCATION) values ( @Fname, @Lname,@model, @note, @system, @location)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO HARDWARE ( OWNER_NAME, MODEL, NOTE, SYSTEM_NAME, LOCATION) values ( @Fname, @model, @note, @system, @location)", con);
 
 
                     cmd.Parameters.AddWithValue("@model", MODEL);
                     cmd.Parameters.AddWithValue("@Fname", Fname);
-                    cmd.Parameters.AddWithValue("@Lname", Lname);
                     cmd.Parameters.AddWithValue("@note", NOTE);
                     cmd.Parameters.AddWithValue("@system",system_name);
                     cmd.Parameters.AddWithValue("@location", LOCATION);
 
 
                     int i = cmd.ExecuteNonQuery();
-                
+                con.Close();
             }
             catch { MessageBox.Show("ERROR! Please ammend information."); }
         }

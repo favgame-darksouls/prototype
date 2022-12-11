@@ -35,7 +35,14 @@ namespace prototype
 
         private void Remove_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sql1804215DataSet2.HARDWARE' table. You can move, or remove it, as needed.
+            this.hARDWARETableAdapter.Fill(this.sql1804215DataSet2.HARDWARE);
 
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            this.array2[5] = this.textBox5.Text.ToString();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -55,7 +62,9 @@ namespace prototype
                     ID = ID + "and" + i;
                 }
             }
-            try { 
+            try {
+
+                MessageBox.Show(ID);
             SqlCommand cmd = new SqlCommand("DELETE FROM USERS WHERE IP = @IP" + ID, con);
 
 

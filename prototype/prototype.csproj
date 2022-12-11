@@ -115,6 +115,21 @@
     <Compile Include="SoftSearch.Designer.cs">
       <DependentUpon>SoftSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="sql1804215DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql1804215DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sql1804215DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql1804215DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sql1804215DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sql1804215DataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sql1804215DataSet1.xsc">
+      <DependentUpon>sql1804215DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sql1804215DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sql1804215DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sql1804215DataSet1.xss">
+      <DependentUpon>sql1804215DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sql1804215DataSet11.xsc">
+      <DependentUpon>sql1804215DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="sql1804215DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sql1804215DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sql1804215DataSet11.xss">
+      <DependentUpon>sql1804215DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="sql1804215DataSet2.xsc">
+      <DependentUpon>sql1804215DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sql1804215DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sql1804215DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sql1804215DataSet2.xss">
+      <DependentUpon>sql1804215DataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

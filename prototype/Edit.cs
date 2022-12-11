@@ -90,6 +90,13 @@ namespace prototype
             this.SYSTEM_NAME = textBox5.Text.ToString();
         }
 
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sql1804215DataSet1.HARDWARE' table. You can move, or remove it, as needed.
+            this.hARDWARETableAdapter.Fill(this.sql1804215DataSet1.HARDWARE);
+
+        }
+
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             this.NOTE = textBox5.Text.ToString();

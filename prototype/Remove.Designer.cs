@@ -29,6 +29,7 @@ namespace prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,26 @@ namespace prototype
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sql1804215DataSet2 = new prototype.sql1804215DataSet2();
+            this.hARDWAREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hARDWARETableAdapter = new prototype.sql1804215DataSet2TableAdapters.HARDWARETableAdapter();
+            this.oWNERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOCATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wORKERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sYSTEMNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oBJECTTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iPADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oSVERSIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mANUFACTURERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hARDWAREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -62,7 +82,7 @@ namespace prototype
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(46, 291);
+            this.label9.Location = new System.Drawing.Point(48, 291);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 15);
             this.label9.TabIndex = 103;
@@ -199,17 +219,139 @@ namespace prototype
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oWNERNAMEDataGridViewTextBoxColumn,
+            this.lOCATIONDataGridViewTextBoxColumn,
+            this.wORKERIDDataGridViewTextBoxColumn,
+            this.mODELDataGridViewTextBoxColumn,
+            this.tYPEDataGridViewTextBoxColumn,
+            this.nOTEDataGridViewTextBoxColumn,
+            this.sYSTEMNAMEDataGridViewTextBoxColumn,
+            this.oBJECTTYPEDataGridViewTextBoxColumn,
+            this.iPADDRESSDataGridViewTextBoxColumn,
+            this.oSDataGridViewTextBoxColumn,
+            this.oSVERSIONDataGridViewTextBoxColumn,
+            this.mANUFACTURERDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.hARDWAREBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(411, 83);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(386, 216);
             this.dataGridView1.TabIndex = 111;
+            // 
+            // sql1804215DataSet2
+            // 
+            this.sql1804215DataSet2.DataSetName = "sql1804215DataSet2";
+            this.sql1804215DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hARDWAREBindingSource
+            // 
+            this.hARDWAREBindingSource.DataMember = "HARDWARE";
+            this.hARDWAREBindingSource.DataSource = this.sql1804215DataSet2;
+            // 
+            // hARDWARETableAdapter
+            // 
+            this.hARDWARETableAdapter.ClearBeforeFill = true;
+            // 
+            // oWNERNAMEDataGridViewTextBoxColumn
+            // 
+            this.oWNERNAMEDataGridViewTextBoxColumn.DataPropertyName = "OWNER_NAME";
+            this.oWNERNAMEDataGridViewTextBoxColumn.HeaderText = "OWNER_NAME";
+            this.oWNERNAMEDataGridViewTextBoxColumn.Name = "oWNERNAMEDataGridViewTextBoxColumn";
+            // 
+            // lOCATIONDataGridViewTextBoxColumn
+            // 
+            this.lOCATIONDataGridViewTextBoxColumn.DataPropertyName = "LOCATION";
+            this.lOCATIONDataGridViewTextBoxColumn.HeaderText = "LOCATION";
+            this.lOCATIONDataGridViewTextBoxColumn.Name = "lOCATIONDataGridViewTextBoxColumn";
+            // 
+            // wORKERIDDataGridViewTextBoxColumn
+            // 
+            this.wORKERIDDataGridViewTextBoxColumn.DataPropertyName = "WORKER_ID";
+            this.wORKERIDDataGridViewTextBoxColumn.HeaderText = "WORKER_ID";
+            this.wORKERIDDataGridViewTextBoxColumn.Name = "wORKERIDDataGridViewTextBoxColumn";
+            // 
+            // mODELDataGridViewTextBoxColumn
+            // 
+            this.mODELDataGridViewTextBoxColumn.DataPropertyName = "MODEL";
+            this.mODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
+            this.mODELDataGridViewTextBoxColumn.Name = "mODELDataGridViewTextBoxColumn";
+            // 
+            // tYPEDataGridViewTextBoxColumn
+            // 
+            this.tYPEDataGridViewTextBoxColumn.DataPropertyName = "[TYPE]";
+            this.tYPEDataGridViewTextBoxColumn.HeaderText = "[TYPE]";
+            this.tYPEDataGridViewTextBoxColumn.Name = "tYPEDataGridViewTextBoxColumn";
+            // 
+            // nOTEDataGridViewTextBoxColumn
+            // 
+            this.nOTEDataGridViewTextBoxColumn.DataPropertyName = "NOTE";
+            this.nOTEDataGridViewTextBoxColumn.HeaderText = "NOTE";
+            this.nOTEDataGridViewTextBoxColumn.Name = "nOTEDataGridViewTextBoxColumn";
+            // 
+            // sYSTEMNAMEDataGridViewTextBoxColumn
+            // 
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.DataPropertyName = "SYSTEM_NAME";
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.HeaderText = "SYSTEM_NAME";
+            this.sYSTEMNAMEDataGridViewTextBoxColumn.Name = "sYSTEMNAMEDataGridViewTextBoxColumn";
+            // 
+            // oBJECTTYPEDataGridViewTextBoxColumn
+            // 
+            this.oBJECTTYPEDataGridViewTextBoxColumn.DataPropertyName = "OBJECT_TYPE";
+            this.oBJECTTYPEDataGridViewTextBoxColumn.HeaderText = "OBJECT_TYPE";
+            this.oBJECTTYPEDataGridViewTextBoxColumn.Name = "oBJECTTYPEDataGridViewTextBoxColumn";
+            // 
+            // iPADDRESSDataGridViewTextBoxColumn
+            // 
+            this.iPADDRESSDataGridViewTextBoxColumn.DataPropertyName = "IP_ADDRESS";
+            this.iPADDRESSDataGridViewTextBoxColumn.HeaderText = "IP_ADDRESS";
+            this.iPADDRESSDataGridViewTextBoxColumn.Name = "iPADDRESSDataGridViewTextBoxColumn";
+            // 
+            // oSDataGridViewTextBoxColumn
+            // 
+            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
+            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
+            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
+            // 
+            // oSVERSIONDataGridViewTextBoxColumn
+            // 
+            this.oSVERSIONDataGridViewTextBoxColumn.DataPropertyName = "OS_VERSION";
+            this.oSVERSIONDataGridViewTextBoxColumn.HeaderText = "OS_VERSION";
+            this.oSVERSIONDataGridViewTextBoxColumn.Name = "oSVERSIONDataGridViewTextBoxColumn";
+            // 
+            // mANUFACTURERDataGridViewTextBoxColumn
+            // 
+            this.mANUFACTURERDataGridViewTextBoxColumn.DataPropertyName = "MANUFACTURER";
+            this.mANUFACTURERDataGridViewTextBoxColumn.HeaderText = "MANUFACTURER";
+            this.mANUFACTURERDataGridViewTextBoxColumn.Name = "mANUFACTURERDataGridViewTextBoxColumn";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(69, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 15);
+            this.label3.TabIndex = 113;
+            this.label3.Text = "Worker ID";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(143, 328);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(202, 24);
+            this.textBox5.TabIndex = 112;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // Remove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 440);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox4);
@@ -230,6 +372,8 @@ namespace prototype
             this.Text = "Remove";
             this.Load += new System.EventHandler(this.Remove_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sql1804215DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hARDWAREBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +397,22 @@ namespace prototype
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private sql1804215DataSet2 sql1804215DataSet2;
+        private System.Windows.Forms.BindingSource hARDWAREBindingSource;
+        private sql1804215DataSet2TableAdapters.HARDWARETableAdapter hARDWARETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oWNERNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lOCATIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wORKERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mODELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOTEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sYSTEMNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oBJECTTYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iPADDRESSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oSVERSIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mANUFACTURERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

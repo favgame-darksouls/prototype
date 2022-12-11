@@ -13,8 +13,7 @@ namespace prototype
     public partial class AddUser : Form
     {
         string ID, Fname, Lname, password, position;
-        SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
-
+        
         public AddUser()
         {
             InitializeComponent();
@@ -46,8 +45,9 @@ namespace prototype
             try
             {
                 string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+                SqlConnection con = new SqlConnection(@"Data Source=tolmount.abertay.ac.uk;Initial Catalog=sql1804215;Persist Security Info=True;User ID=sql1804215;Password = eu8BP9s3zA");
                 SqlCommand cmd = new SqlCommand("DELETE FROM USERS WHERE ID = @ID AND PASS_HASH = @password;", con);
-
+                con.Open();
 
                 cmd.Parameters.AddWithValue("@ID", ID);
                 cmd.Parameters.AddWithValue("@password", passwordHash);
@@ -67,6 +67,7 @@ namespace prototype
                 {
                     MessageBox.Show("User doesn't exhists");
                 };
+                con.Close();
             }
             catch { MessageBox.Show("Please fill in all fields!"); }
         }

@@ -16,5 +16,12 @@ namespace prototype
         {
             InitializeComponent();
         }
+
+        private void SoftSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sql1804215DataSet.HARDWARE' table. You can move, or remove it, as needed.
+            this.hARDWARETableAdapter.Fill(this.sql1804215DataSet.HARDWARE);
+
+        }
     }
 }
